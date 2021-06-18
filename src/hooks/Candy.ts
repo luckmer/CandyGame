@@ -26,6 +26,7 @@ const Candy = (
     for (let i = 0; i < GRID_SIZE ** 2 - GRID_SIZE * 2; i++) {
       const Check = [i, i + GRID_SIZE, i + GRID_SIZE * 2];
       const color = Array[i].color;
+
       const isSame = Check.every(
         (col) => Array[col].color === color && color !== ""
       );
@@ -39,13 +40,17 @@ const Candy = (
 
   const DeleteThreeHorizontal = useCallback(() => {
     if (!Array.length) return;
+
     const result = mergeAndDeleteForRow(Array);
+
     if (result) setArray([...result]);
   }, [Array, setArray]);
 
   const DeleteThreeVertical = useCallback(() => {
     if (!Array.length) return;
+
     const result = mergeAndDeleteForColumn(Array);
+
     if (result) setArray([...result]);
   }, [Array, setArray]);
 
@@ -60,6 +65,7 @@ const Candy = (
       }
     }
   };
+
   const UpdateEmptySpace = (array: HookInterface[], Return: any) => {
     for (let i = 0; i < GRID_TOTAL_SIZE; i++) {
       const random = Math.floor(Math.random() * COLORS.length);
