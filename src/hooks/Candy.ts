@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-
 import { GRID_TOTAL_SIZE, COLORS, GRID_SIZE } from "../hooks/Constants";
 import { HookInterface } from "../interfaces/HookInterface";
 
